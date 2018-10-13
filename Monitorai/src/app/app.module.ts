@@ -11,6 +11,7 @@ import { DenunciaPage } from '../pages/denuncia/denuncia';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     BuscaPage,
+<<<<<<< HEAD
     ComochegarPage, 
     DenunciaPage
+=======
+    ComochegarPage,
+    DenunciaPage,
+    LoginPage
+>>>>>>> 0d92c1efb7ec07bd7b2734bb323b8cd5d810bb49
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     BuscaPage,
     ComochegarPage,
-    DenunciaPage
+    DenunciaPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
