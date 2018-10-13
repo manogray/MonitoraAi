@@ -19,14 +19,9 @@ import { LoginPage } from '../pages/login/login';
     HomePage,
     ListPage,
     BuscaPage,
-<<<<<<< HEAD
     ComochegarPage, 
-    DenunciaPage
-=======
-    ComochegarPage,
     DenunciaPage,
     LoginPage
->>>>>>> 0d92c1efb7ec07bd7b2734bb323b8cd5d810bb49
   ],
   imports: [
     BrowserModule,
