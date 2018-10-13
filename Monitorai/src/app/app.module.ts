@@ -20,7 +20,7 @@ import { OnibusPage } from '../pages/onibus/onibus';
     HomePage,
     ListPage,
     BuscaPage,
-    ComochegarPage,
+    ComochegarPage, 
     DenunciaPage,
     LoginPage,
     OnibusPage

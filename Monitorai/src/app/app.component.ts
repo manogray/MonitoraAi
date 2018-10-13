@@ -26,7 +26,7 @@ export class MyApp {
     this.pages = [
       { title: 'Como chegar? ', component: ComochegarPage },
       { title: 'Faça uma Denúncia ', component: DenunciaPage },
-      { title: 'Avalie nosso app ', component: ListPage } 
+      { title: 'Avaliação ', component: ListPage }  
      
       
     ];
