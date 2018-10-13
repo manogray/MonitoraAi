@@ -18,7 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     BuscaPage,
-    ComochegarPage,
+    ComochegarPage, 
     DenunciaPage
   ],
   imports: [

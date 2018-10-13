@@ -27,7 +27,7 @@ export class MyApp {
       { title: 'Monitorai', component: HomePage },
       { title: 'Como chegar? ', component: ComochegarPage },
       { title: 'Faça uma Denúncia ', component: DenunciaPage },
-      { title: 'Avaliação ', component: ListPage } 
+      { title: 'Avaliação ', component: ListPage }  
      
       
     ];
