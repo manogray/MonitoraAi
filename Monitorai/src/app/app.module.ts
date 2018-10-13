@@ -12,6 +12,7 @@ import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
+import { OnibusPage } from '../pages/onibus/onibus';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginPage } from '../pages/login/login';
     BuscaPage,
     ComochegarPage,
     DenunciaPage,
-    LoginPage
+    LoginPage,
+    OnibusPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { LoginPage } from '../pages/login/login';
     BuscaPage,
     ComochegarPage,
     DenunciaPage,
-    LoginPage
+    LoginPage,
+    OnibusPage
   ],
   providers: [
     StatusBar,

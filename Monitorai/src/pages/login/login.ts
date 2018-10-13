@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 /**
@@ -16,7 +16,7 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -25,6 +25,15 @@ export class LoginPage {
 
   conectarGoogle() {
     this.navCtrl.setRoot(HomePage);
+  }
+
+  presentLoading() {
+    const loader = this.loadingCtrl.create({
+      content: "Carregando...",
+      duration: 3000
+    });
+    loader.present();
+    this.conectarGoogle();
   }
 
 }

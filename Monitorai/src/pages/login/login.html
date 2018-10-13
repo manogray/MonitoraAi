@@ -14,12 +14,12 @@
     <img src="../../assets/imgs/logoround.png" style="width: 180px;">
 
     <div class="content-textStart">
-        <p>O Monitora Aí é uma solução gratuita nascida no 1º Amazon Hackfest com o intuito mostrar com clareza a regularidade dos ônibus do sistema de transporte público. Além disso, facilita sua mobilidade urbana.</p>
+        <p>O Monitora Aí é uma solução gratuita desenvolvida no 1º Amazon Hackfest com o intuito de melhorar a transparência do sistema de transporte público e facilitar sua mobilidade urbana.</p>
     </div>
     <div>
-      <input type="checkbox">
-      <span>Aceito os termos de uso do plataforma</span>
+      <input type="checkbox" name="termos" id="termos">
+      <label for="termos">Aceito os termos de uso do plataforma</label>
     </div>
-    <button (click)="conectarGoogle()" class="botaoLogin"><ion-icon name="logo-google"></ion-icon>  Conectar com o Google</button>
+    <button (click)="presentLoading()" class="botaoLogin"><ion-icon name="logo-google"></ion-icon>  Conectar com o Google</button>
   </div>
 </ion-content>
