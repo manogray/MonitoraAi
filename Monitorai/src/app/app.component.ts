@@ -23,8 +23,8 @@ export class MyApp {
     this.pages = [
       { title: 'Monitorai', component: HomePage },
       { title: 'Como chegar ? ', component: ListPage },
-      { title: 'Reportar ', component: ListPage },
-      { title: 'Avaliação ', component: ListPage }
+      { title: 'Faça uma Denúncia ', component: ListPage },
+      { title: 'Avaliação ', component: ListPage } 
      
       
     ];
