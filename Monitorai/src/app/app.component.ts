@@ -3,7 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ComochegarPage } from '../pages/comochegar/comochegar';
 // import { BuscaPage } from '../pages/busca/busca';
@@ -27,7 +26,11 @@ export class MyApp {
     this.pages = [
       { title: 'Como chegar? ', component: ComochegarPage },
       { title: 'Faça uma Denúncia ', component: DenunciaPage },
+<<<<<<< HEAD
       { title: 'Avaliação ', component: ListPage }  
+=======
+      { title: 'Avalie nosso app ', component: ListPage } 
+>>>>>>> b6bb53d98d4a0329eda2a161eb15785cb4f645b6
      
       
     ];
