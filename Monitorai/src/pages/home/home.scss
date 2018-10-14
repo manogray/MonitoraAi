@@ -35,4 +35,15 @@ page-home {
         padding: 4px;
         margin-right: 8px;
     }
+
+    .mapinhaEnganador {
+        position: relative;
+        float: left;
+        width: 130%;
+        left: -15%;
+        background: url(../../assets/imgs/mapinha.png);
+        background-size: cover;
+        height: 270px;
+        margin-top: 30px;
+    }
 }
