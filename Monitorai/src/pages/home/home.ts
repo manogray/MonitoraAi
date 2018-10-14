@@ -1,13 +1,13 @@
-import {
-  GoogleMaps,
-  GoogleMap,
-  GoogleMapsEvent,
-  GoogleMapOptions,
-  CameraPosition,
-  MarkerOptions,
-  Marker,
-  Environment
-} from '@ionic-native/google-maps';
+//import {
+  //GoogleMaps,
+  //GoogleMap,
+  //GoogleMapsEvent,
+  //GoogleMapOptions,
+  //CameraPosition,
+  //MarkerOptions,
+//  Marker,
+//  Environment
+//} from '@ionic-native/google-maps';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { OnibusPage } from '../onibus/onibus';
@@ -17,7 +17,6 @@ import { OnibusPage } from '../onibus/onibus';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  map: GoogleMap;
   constructor(public navCtrl: NavController) {
 
   }
@@ -26,10 +25,7 @@ export class HomePage {
     this.navCtrl.push(OnibusPage,{linha: numeroLinha});
   }
 
-  ionViewDidLoad() {
-    this.loadMap();
-  }
-
+  /*
   loadMap() {
 
     // This code is necessary for browser
@@ -65,5 +61,6 @@ export class HomePage {
     });
   }
 }
+*/
 
 }
