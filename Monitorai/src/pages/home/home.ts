@@ -11,6 +11,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { OnibusPage } from '../onibus/onibus';
+import { BuscaPage } from '../busca/busca';
 
 @Component({
   selector: 'page-home',
@@ -24,6 +25,10 @@ export class HomePage {
   verOnibus(numeroLinha) {
     this.navCtrl.push(OnibusPage,{linha: numeroLinha});
   }
+
+  vaiParaBusca(){
+    this.navCtrl.push(BuscaPage)
+  } 
 
   /*
   loadMap() {
