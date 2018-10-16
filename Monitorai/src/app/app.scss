@@ -26,3 +26,16 @@
 .bar-button-default-md {
     color: #f5f5f5;
 }
+
+.botaoPadrao {
+    position: relative;
+    float: left;
+    background: #ff6600;
+    padding: 15px 30px;
+    border-radius: 20px;
+    color: #f5f5f5;
+    font-size: 13pt;
+    margin-top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}

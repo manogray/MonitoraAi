@@ -8,6 +8,7 @@ import { ComochegarPage } from '../pages/comochegar/comochegar';
 // import { BuscaPage } from '../pages/busca/busca';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { LoginPage } from '../pages/login/login';
+import { CustoPage } from '../pages/custo/custo';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,8 @@ export class MyApp {
     this.pages = [
       { title: 'Como chegar? ', component: ComochegarPage },
       { title: 'Faça uma Denúncia ', component: DenunciaPage },
-      { title: 'Avaliação ', component: ListPage }  
+      { title: 'Avaliação ', component: ListPage },
+      { title: 'Custo', component: CustoPage}
      
       
     ];
