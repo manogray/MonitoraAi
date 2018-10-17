@@ -9,6 +9,7 @@ import { ComochegarPage } from '../pages/comochegar/comochegar';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { LoginPage } from '../pages/login/login';
 import { CustoPage } from '../pages/custo/custo';
+import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,17 +19,18 @@ export class MyApp {
 
   rootPage: any = LoginPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Como chegar? ', component: ComochegarPage },
-      { title: 'Faça uma Denúncia ', component: DenunciaPage },
-      { title: 'Avaliação ', component: ListPage },
-      { title: 'Custo', component: CustoPage}
+      { title: 'Como chegar? ', component: ComochegarPage, icon: 'map' },
+      { title: 'Faça uma Denúncia ', component: DenunciaPage, icon: 'megaphone' },
+      { title: 'Avalie nosso app ', component: ListPage, icon: 'thumbs-up' },
+      { title: 'Custo', component: CustoPage, icon: 'logo-usd'},
+      {title: 'Termos de uso', component: HomePage, icon: 'paper'}
      
       
     ];

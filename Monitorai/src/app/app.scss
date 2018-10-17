@@ -19,6 +19,10 @@
     background: #ff6600;
 }
 
+.textura div {
+    background: url(../assets/imgs/textura.png);
+}
+
 .toolbar-title-md {
     color: #f5f5f5;
 }
@@ -26,6 +30,46 @@
 .bar-button-default-md {
     color: #f5f5f5;
 }
+
+.user-content{
+    position: relative;
+    float: left;
+    width: 100%;
+    background: none !important;
+    margin-left: 10px;
+    color: #f5f5f5;
+}
+
+.logoMonitora {
+    width: 85px;
+    margin-left: 5px;
+}
+
+.botaoMenu {
+    display: flex;
+    align-items: center;
+    position: relative;
+    float: left;
+    width: 100%;
+    background: none;
+    margin-top: 30px
+}
+
+.botaoMenu ion-icon {
+    font-size: 20pt;
+    margin-left: 10px;
+    margin-right: 30px;
+    color: #ccc;
+}
+
+.botaoMenu span {
+    font-weight: 400;
+}
+
+.menu-inner {
+    width: 290px;
+}
+
 
 .botaoPadrao {
     position: relative;
