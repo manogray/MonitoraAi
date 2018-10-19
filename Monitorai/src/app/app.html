@@ -1,14 +1,19 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <img src="../assets/imgs/logoround.png" style="width: 90px; margin-left: 99px;">
+    <ion-toolbar class="textura"> 
+      <img src="../assets/imgs/logoround.png" class="logoMonitora">
+      <div class="user-content">
+        <p style="font-weight: bold;">Larissa Pessoa</p>
+        <p>lariissa.pessoa@gmail.com</p>
+      </div>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button class="botaoMenu" menuClose *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon name="{{p.icon}}"></ion-icon>
+          <span>{{p.title}}</span>
       </button>
     </ion-list>
   </ion-content>
