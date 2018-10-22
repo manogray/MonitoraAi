@@ -14,6 +14,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { OnibusPage } from '../pages/onibus/onibus';
 import { CustoPage } from '../pages/custo/custo';
+import { Geolocation } from '@ionic-native/geolocation';
+import {MapaPage} from '../pages/mapa/mapa'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CustoPage } from '../pages/custo/custo';
     DenunciaPage,
     LoginPage,
     OnibusPage,
-    CustoPage
+    CustoPage,
+    MapaPage
   ],
   imports: [
     BrowserModule,
@@ -41,11 +44,13 @@ import { CustoPage } from '../pages/custo/custo';
     DenunciaPage,
     LoginPage,
     OnibusPage,
-    CustoPage
+    CustoPage,
+    MapaPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

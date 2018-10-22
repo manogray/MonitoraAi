@@ -9,7 +9,7 @@ import { ComochegarPage } from '../pages/comochegar/comochegar';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { LoginPage } from '../pages/login/login';
 import { CustoPage } from '../pages/custo/custo';
-import { HomePage } from '../pages/home/home';
+import { MapaPage } from '../pages/mapa/mapa';
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +30,7 @@ export class MyApp {
       { title: 'Faça uma Denúncia ', component: DenunciaPage, icon: 'megaphone' },
       { title: 'Avalie nosso app ', component: ListPage, icon: 'thumbs-up' },
       { title: 'Custo', component: CustoPage, icon: 'logo-usd'},
-      {title: 'Termos de uso', component: HomePage, icon: 'paper'}
+      {title: 'Termos de uso', component: MapaPage, icon: 'paper'}
      
       
     ];
