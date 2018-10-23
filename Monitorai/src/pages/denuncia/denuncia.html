@@ -13,44 +13,46 @@
 
 
 <ion-content padding>
+  <ion-card class="cardPadrao" style="padding: 15px;">
   <input type="text" placeholder="CPF" class="inputTextPadrao" name="cpf">
-  <ion-list>
+  <ion-list style="width: 110%;">
       <ion-item>
         <ion-label>Empresa</ion-label>
         <ion-select [(ngModel)]="empresa">
-          <ion-option value="">Não lembro =(</ion-option>
-          <ion-option value="">Rondônia</ion-option>
-          <ion-option value="">Açaí</ion-option>
-          <ion-option value="">São Pedro</ion-option>
-          <ion-option value="">Integração</ion-option>
-          <ion-option value="">Via Verde</ion-option>
-          <ion-option value="">Coroado</ion-option>
-          <ion-option value="">Global</ion-option>
-          <ion-option value="">Transtol</ion-option>
-          <ion-option value="">Líder</ion-option>
-          <ion-option value="">Vega</ion-option>
-          <ion-option value="">Terminais</ion-option>
+          <ion-option value="Não lembra">Não lembro =(</ion-option>
+          <ion-option value="Rondônia">Rondônia</ion-option>
+          <ion-option value="Açaí">Açaí</ion-option>
+          <ion-option value="São Pedro">São Pedro</ion-option>
+          <ion-option value="Integração">Integração</ion-option>
+          <ion-option value="Via Verde">Via Verde</ion-option>
+          <ion-option value="Coroado">Coroado</ion-option>
+          <ion-option value="Global">Global</ion-option>
+          <ion-option value="Transtol">Transtol</ion-option>
+          <ion-option value="Líder">Líder</ion-option>
+          <ion-option value="Vega">Vega</ion-option>
+          <ion-option value="Terminais">Terminais</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>
-  <ion-list>
+  <ion-list style="width: 110%;">
       <ion-item>
         <ion-label>Categoria</ion-label>
         <ion-select [(ngModel)]="categoria">
-          <ion-option value="">Assalto ao ônibus</ion-option>
-          <ion-option value="">Assalto individual</ion-option>
-          <ion-option value="">Assédio ou abuso sexual</ion-option>
-          <ion-option value="">Furto</ion-option>
-          <ion-option value="">Sem cesta de lixo</ion-option>
-          <ion-option value="">Cadeira quebrada</ion-option>
-          <ion-option value="">Alavanca de emergência quebrada</ion-option>
-          <ion-option value="">Haste para segurar quebrada</ion-option>
-          <ion-option value="">Outro</ion-option>
+          <ion-option value="Assalto ao ônibus">Assalto ao ônibus</ion-option>
+          <ion-option value="Assalto individual">Assalto individual</ion-option>
+          <ion-option value="Assédio ou abuso sexual">Assédio ou abuso sexual</ion-option>
+          <ion-option value="Furto">Furto</ion-option>
+          <ion-option value="Sem cesta de lixo">Sem cesta de lixo</ion-option>
+          <ion-option value="Cadeira quebrada">Cadeira quebrada</ion-option>
+          <ion-option value="Alavanca de emergência quebrada">Alavanca de emergência quebrada</ion-option>
+          <ion-option value="Haste para segurar quebrada">Haste para segurar quebrada</ion-option>
+          <ion-option value="Outro">Outro</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>
     <input type="number" placeholder="Linha" class="inputTextPadrao">
   <textarea name="descricao" id="" class="textareaPadrao" placeholder="Descrição"></textarea>
 
-  <button class="botaoPadrao">Denunciar!</button>
+  <button class="botaoPadrao" style="left: 0%; transform: translateX(0%);">Denunciar!</button>
+  </ion-card>
 </ion-content>

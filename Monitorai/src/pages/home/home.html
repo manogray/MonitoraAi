@@ -13,24 +13,29 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="content-logoStart">
-   <p class="paradaAtualtext">Avenida Darcy Vargas, 100</p>
-
-   <span style="position: relative; float: left; left: -40%;">Próximo</span>
+  <ion-card class="cardPadrao">
+    <div style="display: flex;">
+      <p class="paradaAtualtext" style="margin-right: 15px;">00955 - Rodrigo Otávio, 775</p>
+      <button ion-button icon-only style="margin-top: 13px; background: none; box-shadow: none; color: #ccc;">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </div>
    <div class="content-textStart">
      <div style="display: flex; flex-direction: row;">
-      <h2 (click)="verOnibus(678)" class="proximaLinha">678</h2>
-      <span style="margin: 44px 0px 0px 35px;">está a 5 min de você</span>
+      <div style="display: flex; flex-direction: column;">
+        <h2 (click)="verOnibus(678)" class="proximaLinha">213</h2>
+        <span>está a 5 min de você</span>
+      </div>
+        <button class="botaoPadrao" style="margin-top: 12%; padding: 0px 25px; height: 35px; left: 34%;">Entrei</button>
      </div>
      <div class="linhasDistantes">
-       <span>540</span>
-       <span>213</span>
-       <span>652</span>
-       <span>652</span>
+       <div>457<span>13 min</span></div>
+       <div>650<span>21 min</span></div>
+       <div>215<span>28 min</span></div>
+       <div style="border-right: none;">460<span>32 min</span></div>
      </div>
 
-     <div class="mapinhaEnganador"></div>
-
    </div>
-  </div> 
+  </ion-card>
+  <iframe class="mapinhaEnganador" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.9713855294785!2d-59.984413739742045!3d-3.1022603867910616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1ad52a797941%3A0x9b157ba2f55e1e0b!2s00955+-+Rodrigo+Ot%C3%A1vio%2C+775!5e0!3m2!1spt-BR!2sbr!4v1540158241291" frameborder="0" style="border:0"></iframe> 
 </ion-content>

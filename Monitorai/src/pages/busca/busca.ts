@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OnibusPage } from '../onibus/onibus';
 
 /**
  * Generated class for the BuscaPage page.
@@ -18,20 +19,35 @@ export class BuscaPage {
   searchQuery: string = '';
   items: string[];
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
     this.initializeItems();
+  }
+
+  verOnibus(numeroLinha) {
+    this.navCtrl.push(OnibusPage,{linha: numeroLinha});
   }
 
   initializeItems() {
     this.items = [
+      '001',
+      '002',
+      '003',
+      '004',
+      '005',
       '008',
       '118',
       '213',
+      '215',
+      '352',
       '502',
       '540',
+      '541',
+      '542',
+      '616',
       '652',
       '671',
       '672',
+      '678',
     ];
   }
 
