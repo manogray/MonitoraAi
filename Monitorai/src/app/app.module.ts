@@ -9,6 +9,7 @@ import { ComochegarPage } from '../pages/comochegar/comochegar';
 import { BuscaPage } from '../pages/busca/busca';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
@@ -50,6 +51,7 @@ import {MapaPage} from '../pages/mapa/mapa'
   providers: [
     StatusBar,
     SplashScreen,
+    ScreenOrientation,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
