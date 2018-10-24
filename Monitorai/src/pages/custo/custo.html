@@ -15,6 +15,23 @@
 
 <ion-content padding>
 
+  <div class="trajetoMapa"></div>
+
+  <ion-card class="cardPadrao" style="z-index: -2;">
+  <ion-card-header style="font-size: 16pt;">Como foi sua viagem?</ion-card-header>
+  <div style="position: relative; float: left; width: 100%;">
+    <div class="panelRate">
+      <div class="botaoCheck">
+          <input type="radio" name="avaliacao" value="like">
+          <ion-icon name="thumbs-up"></ion-icon>
+      </div>
+      <div class="botaoCheck">
+          <input type="radio" name="avaliacao" value="dislike">
+          <ion-icon name="thumbs-down"></ion-icon>
+      </div>
+    </div>
+  </div>
+
   <div class="content-custo" style="margin-top: 35px;">
     <div class="custo-cont">
       <span>Trajeto</span>
@@ -27,16 +44,6 @@
       <span>45 min</span>
     </div>
   </div>
-  <div style="position: relative; float: left; width: 100%;">
-    <h3 style="text-align: center;">Avalie</h3>
-    <div style="display: flex; justify-content: space-around; color: #ff6600;">
-      <ion-icon name="star-outline"></ion-icon>
-      <ion-icon name="star-outline"></ion-icon>
-      <ion-icon name="star-outline"></ion-icon>
-      <ion-icon name="star-outline"></ion-icon>
-      <ion-icon name="star-outline"></ion-icon>
-    </div>
-  </div>
-
-  <button class="botaoPadrao">Faça uma denúncia</button>
+  <button class="botaoPadrao" style="left: 0%; transform: translateX(0%); margin-top: 0; margin-bottom: 10px;">Pronto</button>
+  </ion-card>
 </ion-content>
