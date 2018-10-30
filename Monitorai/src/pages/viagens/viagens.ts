@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DenunciaPage } from '../denuncia/denuncia';
+import { CustoPage } from '../custo/custo';
 
 /**
- * Generated class for the OnibusPage page.
+ * Generated class for the ViagensPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +11,19 @@ import { DenunciaPage } from '../denuncia/denuncia';
 
 @IonicPage()
 @Component({
-  selector: 'page-onibus',
-  templateUrl: 'onibus.html',
+  selector: 'page-viagens',
+  templateUrl: 'viagens.html',
 })
-export class OnibusPage {
+export class ViagensPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  linha = this.navParams.get('linha');
-
   ionViewDidLoad() {
   }
 
-  abrirDenuncia(){
-    this.navCtrl.push(DenunciaPage);
+  abrirViagem(){
+    this.navCtrl.push(CustoPage);
   }
 
 }

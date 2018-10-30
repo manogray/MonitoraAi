@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>213</ion-title>
+    <ion-title>{{linha}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -47,6 +47,6 @@
       </div>
     </div>
 
-  <button class="botaoPadrao">Faça uma denúncia</button>
+  <button (click)="abrirDenuncia()" class="botaoPadrao">Faça uma denúncia</button>
 
 </ion-content>

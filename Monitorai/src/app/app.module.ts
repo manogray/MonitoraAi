@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { ComochegarPage } from '../pages/comochegar/comochegar';
 import { BuscaPage } from '../pages/busca/busca';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
@@ -16,20 +15,19 @@ import { LoginPage } from '../pages/login/login';
 import { OnibusPage } from '../pages/onibus/onibus';
 import { CustoPage } from '../pages/custo/custo';
 import { Geolocation } from '@ionic-native/geolocation';
-import {MapaPage} from '../pages/mapa/mapa'
+import { ViagensPage } from '../pages/viagens/viagens';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     BuscaPage,
     ComochegarPage, 
     DenunciaPage,
     LoginPage,
     OnibusPage,
+    ViagensPage,
     CustoPage,
-    MapaPage
   ],
   imports: [
     BrowserModule,
@@ -39,14 +37,13 @@ import {MapaPage} from '../pages/mapa/mapa'
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     BuscaPage,
     ComochegarPage,
     DenunciaPage,
     LoginPage,
     OnibusPage,
+    ViagensPage,
     CustoPage,
-    MapaPage
   ],
   providers: [
     StatusBar,

@@ -4,13 +4,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
-import { ListPage } from '../pages/list/list';
 import { ComochegarPage } from '../pages/comochegar/comochegar';
 // import { BuscaPage } from '../pages/busca/busca';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { LoginPage } from '../pages/login/login';
 import { CustoPage } from '../pages/custo/custo';
-import { MapaPage } from '../pages/mapa/mapa';
+import { HomePage } from '../pages/home/home';
+import { ViagensPage } from '../pages/viagens/viagens';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,11 +27,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'Suas Viagens', component: ViagensPage, icon: 'bus'},
       { title: 'Como chegar? ', component: ComochegarPage, icon: 'map' },
       { title: 'Faça uma Denúncia ', component: DenunciaPage, icon: 'megaphone' },
-      { title: 'Avalie nosso app ', component: ListPage, icon: 'thumbs-up' },
-      { title: 'Custo', component: CustoPage, icon: 'logo-usd'},
-      {title: 'Termos de uso', component: MapaPage, icon: 'paper'}
+      {title: 'Termos de uso', component: HomePage, icon: 'paper'},
+      { title: 'Avalie nosso app ', component: HomePage, icon: 'thumbs-up' }
      
       
     ];

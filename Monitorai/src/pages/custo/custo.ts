@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DenunciaPage } from '../denuncia/denuncia';
 
 /**
  * Generated class for the CustoPage page.
@@ -19,7 +20,10 @@ export class CustoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CustoPage');
+  }
+
+  abrirDenuncia() {
+    this.navCtrl.push(DenunciaPage);
   }
 
 }
