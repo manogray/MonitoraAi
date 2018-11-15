@@ -1,24 +1,32 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { OnibusPage } from '../onibus/onibus';
 import { BuscaPage } from '../busca/busca';
-import {Geolocation} from '@ionic-native/geolocation'; 
+import {Geolocation} from '@ionic-native/geolocation';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { HttpClient } from '@angular/common/http';
+import { UserDataProvider } from '../../providers/userdata/userdata';
 
 
 declare var google;
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [
+    UserDataProvider
+  ]
 })
 export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef; 
   map: any;
-
-  constructor(public navCtrl: NavController, public geolocation : Geolocation) {
+  constructor(public navCtrl: NavController, public geolocation : Geolocation, public navParams: NavParams, private googlePlus: GooglePlus, private http: HttpClient, private userdataProvider: UserDataProvider) {
 
   }
+
+  user:any;
+  userdata:any;
 
   ionViewDidLoad(){
     this.loadMap();

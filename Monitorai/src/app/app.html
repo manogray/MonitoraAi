@@ -1,10 +1,10 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar class="textura"> 
-      <img src="../assets/imgs/logoround.png" class="logoMonitora">
+      <img [src]="userdata.image" class="logoMonitora">
       <div class="user-content">
-        <p style="font-weight: bold;">Larissa Pessoa</p>
-        <p>lariissa.pessoa@gmail.com</p>
+        <p style="font-weight: bold;">{{userdata.name}}</p>
+        <p>{{userdata.email}}</p>
       </div>
     </ion-toolbar>
   </ion-header>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { UserDataProvider } from '../../providers/userdata/userdata';
+import { HttpClient } from '@angular/common/http';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 /**
  * Generated class for the LoginPage page.
@@ -13,27 +16,45 @@ import { HomePage } from '../home/home';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
+  providers: [
+    UserDataProvider
+  ]
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  user:any = {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private googlePlus: GooglePlus, private userdataProvider: UserDataProvider, public http: HttpClient, public splashscreen: SplashScreen) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
   }
 
-  conectarGoogle() {
-    this.navCtrl.setRoot(HomePage);
+  loginGoogle(){
+    this.googlePlus.login({})
+    .then(res => {
+      this.user = res;
+      this.pegarDados();
+      this.userdataProvider.setConfigData(this.user.name,this.user.email,this.user.image);
+      console.log(res);
+      this.reload();
+    })
+    .catch(err => console.error(err));
   }
 
-  presentLoading() {
-    const loader = this.loadingCtrl.create({
-      content: "Carregando...",
-      duration: 3000
-    });
-    loader.present();
-    this.conectarGoogle();
+  reload(){
+    this.splashscreen.show();
+    window.location.reload();
   }
 
+  pegarDados(){
+    this.http.get('https://www.googleapis.com/plus/v1/people/me?access_token='+this.user.access_token).subscribe((data:any)=>{
+      this.user.name = data.displayName;
+      this.user.image = data.image.url;
+    })
+  }
+
+  conectarGoogle(){
+    this.loginGoogle();
+  }
 }

@@ -8,22 +8,29 @@ import { ComochegarPage } from '../pages/comochegar/comochegar';
 // import { BuscaPage } from '../pages/busca/busca';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { LoginPage } from '../pages/login/login';
-import { CustoPage } from '../pages/custo/custo';
 import { HomePage } from '../pages/home/home';
 import { ViagensPage } from '../pages/viagens/viagens';
+import { UserDataProvider } from '../providers/userdata/userdata';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [
+    UserDataProvider
+  ]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any;
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  constructor(private screenOrientation: ScreenOrientation, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  userdata: any;
+
+  constructor(private screenOrientation: ScreenOrientation, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private userdataProvider: UserDataProvider) {
     this.initializeApp();
+    this.userdata = this.userdataProvider.getConfigData();
+    
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -42,6 +49,13 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      console.log(this.userdata);
+      if(this.userdata.name == "teste"){
+        this.rootPage = LoginPage;
+      }else {
+        this.rootPage = HomePage;
+      }
+
       this.statusBar.backgroundColorByHexString('#c54f00');
       this.splashScreen.hide();
       //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
