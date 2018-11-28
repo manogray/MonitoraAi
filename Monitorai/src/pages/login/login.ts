@@ -102,6 +102,7 @@ export class LoginPage {
   }
 
   conectarGoogle(){
-    this.loginGoogle();
+    //this.loginGoogle();
+    this.navCtrl.setRoot(HomePage);
   }
 }

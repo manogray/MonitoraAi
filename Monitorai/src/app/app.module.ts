@@ -21,6 +21,7 @@ import { ViagensPage } from '../pages/viagens/viagens';
 import {AngularFireModule} from 'angularfire2'; 
 import firebase from 'firebase'; 
 import { UserDataProvider } from '../providers/userdata/userdata';
+import { MonitoraProvider } from '../providers/monitora/monitora';
 
 export const firebaseConfig ={
 
@@ -70,7 +71,8 @@ export const firebaseConfig ={
     UserDataProvider,
     Geolocation,
     GooglePlus,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MonitoraProvider
   ]
 })
 export class AppModule {}
