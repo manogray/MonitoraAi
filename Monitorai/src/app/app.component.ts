@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
@@ -25,11 +25,23 @@ export class MyApp {
 
   pages: Array<{title: string, component: any, icon: string}>;
 
-  userdata: any;
+  userdata: any; 
 
-  constructor(private screenOrientation: ScreenOrientation, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private userdataProvider: UserDataProvider) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen, 
+    private userdataProvider: UserDataProvider,
+    private events: Events) {
+
+    events.subscribe("user:update", (user) => {
+        
+      this.userdata = user;
+        
+      });
+    
     this.initializeApp();
-    this.userdata = this.userdataProvider.getConfigData();
+    
     
 
     // used for an example of ngFor and navigation
@@ -49,8 +61,11 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      console.log(this.userdata);
-      if(this.userdata.name == "teste"){
+      
+      this.userdata = JSON.parse(this.userdataProvider.getConfigData());
+      console.log (this.userdata);
+  
+      if(this.userdata == null){
         this.rootPage = LoginPage;
       }else {
         this.rootPage = HomePage;

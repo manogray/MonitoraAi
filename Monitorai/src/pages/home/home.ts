@@ -5,7 +5,9 @@ import { BuscaPage } from '../busca/busca';
 import {Geolocation} from '@ionic-native/geolocation';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { HttpClient } from '@angular/common/http';
-import { UserDataProvider } from '../../providers/userdata/userdata';
+import { UserDataProvider} from '../../providers/userdata/userdata'
+
+
 
 
 declare var google;
@@ -13,20 +15,29 @@ declare var google;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [
-    UserDataProvider
-  ]
 })
 export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef; 
   map: any;
-  constructor(public navCtrl: NavController, public geolocation : Geolocation, public navParams: NavParams, private googlePlus: GooglePlus, private http: HttpClient, private userdataProvider: UserDataProvider) {
 
+  diplayName: string; 
+  imgUrl: string; 
+  email: string;
+  user:any;
+
+
+  constructor(public navCtrl: NavController,
+    public geolocation : Geolocation, 
+    public navParams: NavParams, 
+    private googlePlus: GooglePlus,
+    private http: HttpClient,
+    private userDataProvider: UserDataProvider
+    ) {
+     
   }
 
-  user:any;
-  userdata:any;
+ 
 
   ionViewDidLoad(){
     this.loadMap();

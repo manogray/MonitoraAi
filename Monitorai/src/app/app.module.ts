@@ -18,6 +18,20 @@ import { CustoPage } from '../pages/custo/custo';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { ViagensPage } from '../pages/viagens/viagens';
+import {AngularFireModule} from 'angularfire2'; 
+import firebase from 'firebase'; 
+import { UserDataProvider } from '../providers/userdata/userdata';
+
+export const firebaseConfig ={
+
+    apiKey: "AIzaSyBdOvHwOIEG8vY-ByJSsVzk6kDT-RHNSck",
+    authDomain: "monitorai-1539520830956.firebaseapp.com",
+    databaseURL: "https://monitorai-1539520830956.firebaseio.com",
+    projectId: "monitorai-1539520830956",
+    storageBucket: "monitorai-1539520830956.appspot.com",
+    messagingSenderId: "236152044904"
+}
+  firebase.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -35,6 +49,7 @@ import { ViagensPage } from '../pages/viagens/viagens';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,6 +67,7 @@ import { ViagensPage } from '../pages/viagens/viagens';
     StatusBar,
     SplashScreen,
     ScreenOrientation,
+    UserDataProvider,
     Geolocation,
     GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

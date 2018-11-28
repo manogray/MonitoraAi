@@ -1,6 +1,6 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar class="textura"> 
+    <ion-toolbar *ngIf="userdata != null" class="textura"> 
       <img [src]="userdata.image" class="logoMonitora">
       <div class="user-content">
         <p style="font-weight: bold;">{{userdata.name}}</p>

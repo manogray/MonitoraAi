@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class UserDataProvider{
 
-    private config = {
+    public config = {
         name: "",
         email: "",
         image: ""
@@ -14,25 +14,20 @@ export class UserDataProvider{
     }
 
 
-    getConfigData(): any{
-        let userdata = {
-            name: "teste",
-            email: "teste@teste",
-            image: "teste"
-        } 
-        if(localStorage.getItem("config")==null){
-            return userdata;
-        }else {
+    getConfigData():any{
+    
             return localStorage.getItem("config");
-        }
+    
     }
 
     setConfigData(name?: string, email?: string, image?: string){
+
         let config = {
-            name: "",
+            name : "",
             email: "",
             image: ""
-        };
+        }
+     
 
         if(name){
             config.name = name;
