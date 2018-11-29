@@ -38,4 +38,50 @@ export class MonitoraProvider {
 
   }
 
+  cadastrarUsuario(displayName,email){
+    let url = "http://monitoraai.tk/monitoraapi/usuarios/10745701cfafd7e0944c807accf4371fba45";
+    let usuario = {
+      displayName: displayName,
+      email: email
+    }
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    if(!this.temConta(email)){
+      return this.http.post(url,usuario,options);
+    }else {
+      return null;
+    }
+    
+  }
+
+  temConta(email){
+    let url = "http://monitoraai.tk/monitoraapi/usuarios/"+email+"/10745701cfafd7e0944c807accf4371fba45";
+
+    let Retorne = false
+
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    this.http.get(url,options).subscribe(
+      data=>{
+        let retorno = (data as any);
+        let objeto = retorno._body;
+        if(objeto.email != "pintassilgo"){
+          Retorne = true;
+        }
+      }, error=>{
+
+      }
+    );
+
+    return Retorne;
+  }
+
 }

@@ -15,6 +15,9 @@ declare var google;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
+  providers: [
+    UserDataProvider
+  ]
 })
 export class HomePage {
 

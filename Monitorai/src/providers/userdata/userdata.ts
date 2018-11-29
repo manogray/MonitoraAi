@@ -4,9 +4,9 @@ import {Injectable} from '@angular/core';
 export class UserDataProvider{
 
     public config = {
-        name: "",
+        displayName: "",
         email: "",
-        image: ""
+        imageUrl: ""
     }
 
     constructor(){
@@ -23,14 +23,14 @@ export class UserDataProvider{
     setConfigData(name?: string, email?: string, image?: string){
 
         let config = {
-            name : "",
+            displayName : "",
             email: "",
-            image: ""
+            imageUrl: ""
         }
      
 
         if(name){
-            config.name = name;
+            config.displayName = name;
         }
 
         if(email){
@@ -38,7 +38,7 @@ export class UserDataProvider{
         }
 
         if(image){
-            config.image = image;
+            config.imageUrl = image;
         }
 
         localStorage.setItem("config", JSON.stringify(config));

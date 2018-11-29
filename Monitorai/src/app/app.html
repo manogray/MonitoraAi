@@ -1,10 +1,10 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar *ngIf="userdata != null" class="textura"> 
-      <img [src]="userdata.image" class="logoMonitora">
+      <img [src]="userdata.imageUrl" class="logoMonitora">
       <div class="user-content">
-        <p style="font-weight: bold;">Nome teste</p>
-        <p>teste@teste.com</p>
+        <p style="font-weight: bold;">{{userdata.displayName}}</p>
+        <p>{{userdata.email}}</p>
       </div>
     </ion-toolbar>
   </ion-header>

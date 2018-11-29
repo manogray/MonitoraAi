@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events, LoadingController, } from 'ionic-angular';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { UserDataProvider } from '../../providers/userdata/userdata';
 import { HttpClient } from '@angular/common/http';
@@ -25,9 +25,9 @@ import { HomePage } from '../home/home';
 export class LoginPage {
 
   user:any = {
-  name: "",
+  displayName: "",
   email:"",
-  image: ""
+  imageUrl: ""
   };
   
 
@@ -35,10 +35,11 @@ export class LoginPage {
     public navCtrl: NavController, 
     public navParams: NavParams, 
     private googlePlus: GooglePlus, 
-    private userdataProvider: UserDataProvider, 
+    private userdataProvider: UserDataProvider,
     public http: HttpClient, 
     public splashscreen: SplashScreen,
-    public events: Events) {
+    public events: Events,
+    public loadingCtrl: LoadingController) {
   
   
   
@@ -48,28 +49,38 @@ export class LoginPage {
   }
 
   loginGoogle(){
+    let loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Fazendo login...'
+    });
+    loading.present();
     this.googlePlus.login({})
     .then(res => {
       this.user = res;
       this.pegarDados();
-      this.userdataProvider.setConfigData(this.user.name,this.user.email,this.user.image);
-      console.log(res);
-      this.reload();
+      this.userdataProvider.setConfigData(this.user.displayName,this.user.email,this.user.imageUrl);
+      loading.dismiss();
+      this.updateMenu();
+      this.irParaHome();
     })
     .catch(err => console.error(err));
   }
 
-  login (){
+  /*LOGIN COM FIREBASE
+  login(){
     this.googlePlus.login({
-      'webClientId': '236152044904-isf477omvj7i6mmkkuhojperoumvdv6n.apps.googleusercontent.com',
+      'WebClientId': '236152044904-isf477omvj7i6mmkkuhojperoumvdv6n.apps.googleusercontent.com',
       'offline': true
     }).then(res=>{
-      firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken))
+      alert("Autenticando..."+res.email);
+      firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.accessToken))
       .then( (user: firebase.User)=>{
+        alert("Entrando como "+user.displayName);
         this.user.name = user.displayName;
         this.user.email = user.email;
         this.user.image = user.photoURL;
         this.userdataProvider.setConfigData(this.user.name, this.user.email, this.user.image);
+        alert("Dados de usuario no sistema");
         this.updateMenu();
       }).then (suc =>{
         alert("Login realizado com sucesso");
@@ -80,6 +91,7 @@ export class LoginPage {
     })
     
   }
+  */
 
   reload(){
     this.splashscreen.show();
@@ -87,9 +99,9 @@ export class LoginPage {
   }
 
   pegarDados(){
-    this.http.get('https://www.googleapis.com/plus/v1/people/me?access_token='+this.user.access_token).subscribe((data:any)=>{
-      this.user.name = data.displayName;
-      this.user.image = data.image.url;
+    this.http.get('https://www.googleapis.com/plus/v1/people/me?access_token='+this.user.accessToken).subscribe((data:any)=>{
+      this.user.displayName = data.displayName;
+      this.user.imageUrl = data.image.url;
     })
   }
 
@@ -99,10 +111,5 @@ export class LoginPage {
 
   updateMenu(){
       this.events.publish("user:update", this.user);
-  }
-
-  conectarGoogle(){
-    //this.loginGoogle();
-    this.navCtrl.setRoot(HomePage);
   }
 }

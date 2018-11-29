@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { MonitoraProvider } from '../../providers/monitora/monitora';
 import { HomePage } from '../home/home';
+import { UserDataProvider } from '../../providers/userdata/userdata';
 
 /**
  * Generated class for the DenunciaPage page.
@@ -15,19 +16,33 @@ import { HomePage } from '../home/home';
   selector: 'page-denuncia',
   templateUrl: 'denuncia.html',
   providers: [
-    MonitoraProvider
+    MonitoraProvider,
+    UserDataProvider
   ]
 })
 export class DenunciaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public monitoraProvider: MonitoraProvider) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public monitoraProvider: MonitoraProvider, 
+    public userdataProvider: UserDataProvider, 
+    public toastCtrl: ToastController,
+    public loadingCtrl: LoadingController) {
   }
 
   Denuncia: any = {};
+  UserData: any = JSON.parse(this.userdataProvider.getConfigData());
   
   formularioDenuncia(){
-    this.Denuncia.NomeUsuario = "testeuser";
-    this.Denuncia.EmailUsuario = "teste@teste.com";
+    let loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Aguarde...'
+    });
+    loading.present();
+
+    this.Denuncia.NomeUsuario = this.UserData.displayName;
+    this.Denuncia.EmailUsuario = this.UserData.email;
     this.Denuncia.Crime = "0";
     let DataCompleta = new Date;
     let MesCerto = DataCompleta.getMonth() + 1;
@@ -35,11 +50,23 @@ export class DenunciaPage {
     this.Denuncia.Linha = this.Denuncia.Linha.toString();
     let listaInutil:any[] = this.Denuncia;
     this.monitoraProvider.novaDenuncia(JSON.stringify(listaInutil)).subscribe(data=>{
+      loading.dismiss();
+      this.mostrarToast("Denúncia feita com sucesso!");
       this.navCtrl.setRoot(HomePage);
     }, error=>{
+      loading.dismiss();
+      this.mostrarToast("Falha ao fazer denúncia");
       console.log(error);
     }
     )
+  }
+
+  mostrarToast(mensagem){
+    const toast = this.toastCtrl.create({
+      message: mensagem,
+      duration: 3000
+    });
+    toast.present();
   }
 
   ionViewDidLoad() {
