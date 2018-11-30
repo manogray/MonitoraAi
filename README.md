@@ -11,4 +11,10 @@ O Monitora aí vem como uma solução para esses problemas, faça sua denúncia,
   > - Avaliação
   > - Denúncias
  
+### 1.Como chegar? ###
 
+### 2. Avaliação ###
+
+### 3. Denúncias ###
+
+![preview](https://github.com/manogray/MonitoraAi/denuncia.mp4 "css") 
