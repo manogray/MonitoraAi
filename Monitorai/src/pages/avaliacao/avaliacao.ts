@@ -13,14 +13,14 @@ import { UserDataProvider } from '../../providers/userdata/userdata';
 
 @IonicPage()
 @Component({
-  selector: 'page-denuncia',
-  templateUrl: 'denuncia.html',
+  selector: 'page-avaliacao',
+  templateUrl: 'avaliacao.html',
   providers: [
     MonitoraProvider,
     UserDataProvider
   ]
 })
-export class DenunciaPage {
+export class AvaliacaoPage {
 
   constructor(
     public navCtrl: NavController, 
@@ -31,10 +31,10 @@ export class DenunciaPage {
     public loadingCtrl: LoadingController) {
   }
 
-  Denuncia: any = {};
+  Avaliacao: any = {};
   UserData: any = JSON.parse(this.userdataProvider.getConfigData());
   
-  formularioDenuncia(){
+  formularioAvaliacao(){
     let loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Aguarde...',
@@ -42,25 +42,24 @@ export class DenunciaPage {
     });
     loading.present();
 
-    this.Denuncia.NomeUsuario = this.UserData.displayName;
-    this.Denuncia.EmailUsuario = this.UserData.email;
-    this.Denuncia.Crime = "0";
+    this.Avaliacao.NomeUsuario = this.UserData.displayName;
+    this.Avaliacao.EmailUsuario = this.UserData.email;
     let DataCompleta = new Date;
     let MesCerto = DataCompleta.getMonth() + 1;
-    this.Denuncia.Data = DataCompleta.getFullYear().toString()+"/"+MesCerto.toString()+"/"+DataCompleta.getDate().toString()+" "+DataCompleta.getHours().toString()+":"+DataCompleta.getMinutes().toString()+":"+DataCompleta.getSeconds().toString();
-    this.Denuncia.Linha = this.Denuncia.Linha.toString();
-    this.Denuncia.CPFUsuario = this.Denuncia.CPFUsuario.toString();
-    if(this.Denuncia.Descricao == ""){
-      this.Denuncia.Descricao = "Nada a declarar";
+    this.Avaliacao.Data = DataCompleta.getFullYear().toString()+"/"+MesCerto.toString()+"/"+DataCompleta.getDate().toString()+" "+DataCompleta.getHours().toString()+":"+DataCompleta.getMinutes().toString()+":"+DataCompleta.getSeconds().toString();
+    this.Avaliacao.Linha = this.Avaliacao.Linha.toString();
+    this.Avaliacao.Satisfacao = this.Avaliacao.Satisfacao.toString();
+    if(this.Avaliacao.Descricao == ""){
+      this.Avaliacao.Descricao = "Nada a declarar";
     }
-    let listaInutil:any[] = this.Denuncia;
-    this.monitoraProvider.novaDenuncia(JSON.stringify(listaInutil)).subscribe(data=>{
+    let listaInutil:any[] = this.Avaliacao;
+    this.monitoraProvider.novaAvaliacao(JSON.stringify(listaInutil)).subscribe(data=>{
       loading.dismiss();
-      this.mostrarToast("Denúncia feita com sucesso!");
+      this.mostrarToast("Avaliação feita com sucesso!");
       this.navCtrl.setRoot(HomePage);
     }, error=>{
       loading.dismiss();
-      this.mostrarToast("Falha ao fazer denúncia");
+      this.mostrarToast("Falha ao avaliar!");
       console.log(error);
     }
     )

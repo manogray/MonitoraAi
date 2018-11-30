@@ -1,13 +1,7 @@
-<!--
-  Generated template for the CustoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Resumo da viagem</ion-title>
+    <ion-title>Valor real tarifa</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,21 +9,21 @@
 
 <ion-content padding>
 
-  <div class="trajetoMapa"></div>
-
   <ion-card class="cardPadrao" style="z-index: -2;">
-  <ion-card-header style="font-size: 16pt;">Como foi sua viagem?</ion-card-header>
+  <p style="font-size: 12pt; padding: 20px;">Calcule quanto você realmente deveria pagar por sua viagem</p>
   <div style="position: relative; float: left; width: 100%;">
-    <div class="panelRate">
-      <div class="botaoCheck">
-          <input type="radio" name="avaliacao" value="like">
-          <ion-icon name="thumbs-up"></ion-icon>
-      </div>
-      <div class="botaoCheck">
-          <input type="radio" name="avaliacao" value="dislike">
-          <ion-icon name="thumbs-down"></ion-icon>
-      </div>
-    </div>
+      <ion-list>
+        <ion-item>
+          <input type="number" class="inputTextPadrao" name="Distancia" [(ngModel)]="Distancia" [ngModelOptions]="{standalone: true}" placeholder="Distância - Km">
+        </ion-item>
+        <ion-item>
+          <input type="number" class="inputTextPadrao" name="Tempo" [(ngModel)]="Tempo" [ngModelOptions]="{standalone: true}" placeholder="Tempo gasto - Min">
+        </ion-item>
+        <ion-item>
+          <input type="number" class="inputTextPadrao" name="Pessoas" [(ngModel)]="Pessoas" [ngModelOptions]="{standalone: true}" placeholder="Pessoas que viajaram com você">
+        </ion-item>
+      </ion-list>
+      <button (tap)="calcularPreco()" class="botaoPadrao" style="left: 50%; transform: translateX(-50%); margin-top: 0; margin-bottom: 10px;">Calcular</button>
   </div>
 
   <div class="content-custo" style="margin-top: 35px;">
@@ -39,14 +33,12 @@
       <span>Tempo gasto</span>
     </div>
     <div class="custo-cont">
-      <span>11.5 Km</span>
-      <span>R$ 1,41</span>
-      <span>45 min</span>
+      <span id="valorCalcKm">-</span>
+      <span id="valorCalcReal">-</span>
+      <span id="valorCalcTempo">-</span>
     </div>
   </div>
-  <div style="display: flex; justify-content: space-between; width: 90%;">
-  <button (click)="abrirDenuncia()" class="botaoPadrao" style="left: 0%; transform: translateX(0%); margin-top: 0; margin-bottom: 10px;">Denúncia</button>
-  <button class="botaoPadrao" style="left: 0%; transform: translateX(0%); margin-top: 0; margin-bottom: 10px;">Pronto</button>
-  </div>
+  
+  
 </ion-card>
 </ion-content>

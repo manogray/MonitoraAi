@@ -25,6 +25,18 @@ export class MonitoraProvider {
     return this.http.post(url,postData,options);
   }
 
+  novaAvaliacao(postData){
+    let url = "http://monitoraai.tk/monitoraapi/avaliacoes/10745701cfafd7e0944c807accf4371fba45";
+
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    console.log(postData);
+    return this.http.post(url,postData,options);
+  }
+
   pegaDenuncia(id){
     let url = "http://monitoraai.tk/monitoraapi/denuncias/"+id.toString()+"/10745701cfafd7e0944c807accf4371fba45";
 

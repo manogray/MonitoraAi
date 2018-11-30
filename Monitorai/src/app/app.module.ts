@@ -5,23 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ComochegarPage } from '../pages/comochegar/comochegar';
-import { BuscaPage } from '../pages/busca/busca';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
-import { OnibusPage } from '../pages/onibus/onibus';
 import { CustoPage } from '../pages/custo/custo';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GooglePlus } from '@ionic-native/google-plus';
-import { ViagensPage } from '../pages/viagens/viagens';
 import {AngularFireModule} from 'angularfire2'; 
 import firebase from 'firebase'; 
 import { UserDataProvider } from '../providers/userdata/userdata';
 import { MonitoraProvider } from '../providers/monitora/monitora';
+import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
+import { TermosPage } from '../pages/termos/termos';
 
 export const firebaseConfig ={
 
@@ -38,13 +36,11 @@ export const firebaseConfig ={
   declarations: [
     MyApp,
     HomePage,
-    BuscaPage,
-    ComochegarPage, 
     DenunciaPage,
     LoginPage,
-    OnibusPage,
-    ViagensPage,
     CustoPage,
+    AvaliacaoPage,
+    TermosPage
   ],
   imports: [
     BrowserModule,
@@ -56,13 +52,11 @@ export const firebaseConfig ={
   entryComponents: [
     MyApp,
     HomePage,
-    BuscaPage,
-    ComochegarPage,
     DenunciaPage,
     LoginPage,
-    OnibusPage,
-    ViagensPage,
     CustoPage,
+    AvaliacaoPage,
+    TermosPage
   ],
   providers: [
     StatusBar,

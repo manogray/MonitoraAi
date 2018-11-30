@@ -4,38 +4,22 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Monitora Aí</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="vaiParaBusca()">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card class="cardPadrao">
-    <div style="display: flex;">
-      <p class="paradaAtualtext" style="margin-right: 15px;">Av. Rodrigo Otávio</p>
-      <button ion-button icon-only style="margin-top: 13px; background: none; box-shadow: none; color: #ccc;">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </div>
-   <div class="content-textStart">
-     <div style="display: flex; flex-direction: row;">
-      <div style="display: flex; flex-direction: column;">
-        <h2 (click)="verOnibus(213)" class="proximaLinha">213</h2>
-        <span>está a 5 min de você</span>
-      </div>
-        <button class="botaoPadrao" style="margin-top: 12%; padding: 0px 25px; height: 35px; left: 34%;">Entrei</button>
-     </div>
-     <div class="linhasDistantes">
-       <div>457<span>13 min</span></div>
-       <div>650<span>21 min</span></div>
-       <div>215<span>28 min</span></div>
-       <div style="border-right: none;">460<span>32 min</span></div>
-     </div>
+  <ion-list>
 
-   </div>
-  </ion-card>
-  <div class="mapinhaEnganador" #map id="map"></div> 
+      <ion-item>
+        <ion-label floating>Pra onde?</ion-label>
+        <ion-input type="text" #destino id="destino" [(ngModel)]="posicaoDestino"></ion-input>
+        
+      </ion-item>
+
+      <button (click)="calculaRota()" ion-button block style="margin-top: 20px; background-color: #ff6600">Vai!</button>
+      
+    </ion-list>
+
+    <div class="mapaoEnganador" #map id="map"></div>
+
 </ion-content>

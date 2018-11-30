@@ -4,13 +4,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
-import { ComochegarPage } from '../pages/comochegar/comochegar';
-// import { BuscaPage } from '../pages/busca/busca';
 import { DenunciaPage } from '../pages/denuncia/denuncia';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
-import { ViagensPage } from '../pages/viagens/viagens';
 import { UserDataProvider } from '../providers/userdata/userdata';
+import { CustoPage } from '../pages/custo/custo';
+import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
+import { TermosPage } from '../pages/termos/termos';
 
 @Component({
   templateUrl: 'app.html',
@@ -32,6 +32,7 @@ export class MyApp {
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen, 
     private userdataProvider: UserDataProvider,
+    public screenOrient: ScreenOrientation,
     private events: Events) {
 
     events.subscribe("user:update", (user) => {
@@ -46,11 +47,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Suas Viagens', component: ViagensPage, icon: 'bus'},
-      { title: 'Como chegar? ', component: ComochegarPage, icon: 'map' },
+      { title: 'Avalie uma linha', component: AvaliacaoPage, icon: 'bus'},
       { title: 'Faça uma Denúncia ', component: DenunciaPage, icon: 'megaphone' },
-      {title: 'Termos de uso', component: HomePage, icon: 'paper'},
-      { title: 'Avalie nosso app ', component: HomePage, icon: 'thumbs-up' }
+      { title: 'Valor real da tarifa', component: CustoPage, icon: 'cash' },
+      { title: 'Termos de uso', component: TermosPage, icon: 'paper' }
      
       
     ];
@@ -70,10 +70,9 @@ export class MyApp {
       }else {
         this.rootPage = HomePage;
       }
-
+      this.screenOrient.lock(this.screenOrient.ORIENTATIONS.PORTRAIT);
       this.statusBar.backgroundColorByHexString('#c54f00');
       this.splashScreen.hide();
-      //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     });
   }
 

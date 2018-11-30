@@ -19,11 +19,34 @@ export class CustoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-  }
+  Distancia: number;
+  Tempo: number;
+  Pessoas: number;
 
-  abrirDenuncia() {
-    this.navCtrl.push(DenunciaPage);
+  calcularPreco(){
+    console.log("chamei");
+    let custoPerKm = 6.15;
+    let IPK = 1.6102;
+    let elementTrajeto = document.getElementById('valorCalcKm');
+    let elementValor = document.getElementById('valorCalcReal');
+    let elementTempo = document.getElementById('valorCalcTempo');
+    let valorTexto: string
+    
+    if(this.Pessoas == null){
+      console.log('Média de pessoas');
+      elementTrajeto.innerHTML = this.Distancia.toString()+" Km";
+      let valor = (custoPerKm*this.Distancia)/(this.Distancia*IPK);
+      valorTexto = valor.toFixed(2);
+      elementValor.innerHTML = "R$ "+valorTexto;
+      elementTempo.innerHTML = this.Tempo.toString();
+    }else {
+      console.log('Pessoas reais');
+      elementTrajeto.innerHTML = this.Distancia.toString()+" Km";
+      let valor = (custoPerKm*this.Distancia)/(this.Pessoas);
+      console.log(valor);
+      elementValor.innerHTML = "R$ "+valor.toString();
+      elementTempo.innerHTML = this.Tempo.toString()+" min";
+    }
   }
 
 }

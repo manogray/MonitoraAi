@@ -15,11 +15,11 @@
 <ion-content padding>
   <ion-card class="cardPadrao" style="padding: 15px;">
   <form (ngSubmit)="formularioDenuncia()" method="POST">
-    <input type="text" [(ngModel)]="Denuncia.CPFUsuario" [ngModelOptions]="{standalone: true}" placeholder="CPF" class="inputTextPadrao" name="CPFUsuario">
+    <input type="number" [(ngModel)]="Denuncia.CPFUsuario" [ngModelOptions]="{standalone: true}" placeholder="CPF" class="inputTextPadrao" name="CPFUsuario" required>
     <ion-list style="width: 110%;">
         <ion-item>
           <ion-label>Empresa</ion-label>
-          <ion-select [(ngModel)]="Denuncia.Empresa" [ngModelOptions]="{standalone: true}" name="Empresa">
+          <ion-select [(ngModel)]="Denuncia.Empresa" [ngModelOptions]="{standalone: true}" name="Empresa" required>
             <ion-option value="Não lembra">Não lembro =(</ion-option>
             <ion-option value="Rondônia">Rondônia</ion-option>
             <ion-option value="Açaí">Açaí</ion-option>
@@ -38,7 +38,7 @@
     <ion-list style="width: 110%;">
         <ion-item>
           <ion-label>Categoria</ion-label>
-          <ion-select [(ngModel)]="Denuncia.Categoria" [ngModelOptions]="{standalone: true}" name="Categoria">
+          <ion-select [(ngModel)]="Denuncia.Categoria" [ngModelOptions]="{standalone: true}" name="Categoria" required>
             <ion-option value="Assalto ao ônibus">Assalto ao ônibus</ion-option>
             <ion-option value="Assalto individual">Assalto individual</ion-option>
             <ion-option value="Assédio ou abuso sexual">Assédio ou abuso sexual</ion-option>
@@ -51,7 +51,7 @@
           </ion-select>
         </ion-item>
       </ion-list>
-    <input type="number" [(ngModel)]="Denuncia.Linha" name="Linha" [ngModelOptions]="{standalone: true}" placeholder="Linha" class="inputTextPadrao">
+    <input type="number" [(ngModel)]="Denuncia.Linha" name="Linha" [ngModelOptions]="{standalone: true}" placeholder="Linha" class="inputTextPadrao" required>
     <textarea [(ngModel)]="Denuncia.Descricao" name="Descricao" [ngModelOptions]="{standalone: true}" class="textareaPadrao" placeholder="Descrição"></textarea>
 
     <button class="botaoPadrao" type="submit" style="left: 50%; transform: translateX(-50%);">Denunciar!</button>
