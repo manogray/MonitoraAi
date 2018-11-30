@@ -34,4 +34,4 @@ Link para o site : http://monitoraai.tk/
 
 ### 7. Esclarecimentos ###
 
-A funcionalidade de Previsão dos Ônibus, prevista na ideia inicial não foi possível devido a impossibilidade de adquirirmos essas informações. Visto que o órgão responsável se mostrou extremamente fechado a qualquer apoio ou transparência. 
+A funcionalidade de Previsão dos Ônibus em Tempo Real, prevista na ideia inicial, não foi possível devido a impossibilidade de adquirirmos essas informações. Visto que o órgão responsável se mostrou extremamente fechado a qualquer apoio ou transparência. 
