@@ -17,4 +17,4 @@ O Monitora aí vem como uma solução para esses problemas, faça sua denúncia,
 
 ### 3. Denúncias ###
 
-![preview](https://github.com/manogray/MonitoraAi/denuncia.mp4 "css") 
+![preview](https://github.com/manogray/MonitoraAi/Design/denuncia.gif "css") 
