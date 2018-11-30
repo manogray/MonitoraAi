@@ -20,6 +20,8 @@ O nosso sistema conta também com um banco de denúncias que são exibidas no si
 
 ### 2. Como chegar? ###
 
+![preview] (https://github.com/manogray/MonitoraAi/blob/master/Design/ComoChegar.gif "css") 
+
 ### 3. Avaliação ###
 
 ### 4. Denúncias ###
