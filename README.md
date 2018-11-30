@@ -13,20 +13,25 @@ O nosso sistema conta também com um banco de denúncias que são exibidas no si
   > - Avaliação
   > - Denúncias
  
-### 1. Como chegar? ###
+### 1. Login ###
 
-### 2. Avaliação ###
+![preview](https://github.com/manogray/MonitoraAi/blob/master/Design/Login%5B1%5D.gif "css") 
 
-### 3. Denúncias ###
+
+### 2. Como chegar? ###
+
+### 3. Avaliação ###
+
+### 4. Denúncias ###
 
 ![preview](https://github.com/manogray/MonitoraAi/blob/master/Design/denuncia%5B2%5D.gif "css") 
 
-### 4. Calculadora de preço real ###
+### 5. Calculadora de preço real ###
 
-### 5. Site ###
+### 6. Site ###
 
 Link para o site : http://monitoraai.tk/
 
-### 6. Esclarecimentos ###
+### 7. Esclarecimentos ###
 
 A funcionalidade de Previsão dos Ônibus, prevista na ideia inicial não foi possível devido a impossibilidade de adquirirmos essas informações. Visto que o órgão responsável se mostrou extremamente fechado a qualquer apoio ou transparência. 
