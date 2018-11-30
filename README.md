@@ -24,7 +24,7 @@ O nosso sistema conta também com um banco de denúncias que são exibidas no si
 
 ### 4. Denúncias ###
 
-![preview](https://github.com/manogray/MonitoraAi/blob/master/Design/denuncia%5B2%5D.gif "css") 
+![preview](https://github.com/manogray/MonitoraAi/blob/master/Design/DenunciaFinal%5B1%5D.gif "css") 
 
 ### 5. Calculadora de preço real ###
 
