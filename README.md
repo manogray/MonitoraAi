@@ -29,11 +29,15 @@ Link para o site : http://monitoraai.tk/
 
 ### 3. Avaliação ###
 
+O usuário pode fazer avaliações por linha do ônibus e informar como foi a viagem.
+
 ### 4. Denúncias ###
 
 ![preview](https://github.com/manogray/MonitoraAi/blob/master/Design/DenunciaFinal%5B1%5D.gif "css") 
 
 ### 5. Calculadora de preço real ###
+
+Fornecendo a distância em Km, o tempo de duração da viagem e a quantidade de pessoas (valor estimado) que estavam com você durante o trajeto, o nosso algoritmo calcula o preço da viagem no valor real.
 
 ### 6. Esclarecimentos ###
 
