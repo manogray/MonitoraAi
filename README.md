@@ -8,10 +8,15 @@ O Monitora aí vem como uma solução para esses problemas, faça sua denúncia,
 
 O nosso sistema conta também com um banco de denúncias que são exibidas no site do Monitora ai, totalmente alimentado pelas denúncias feitas no App.
 
+### Site ###
+
+Link para o site : http://monitoraai.tk/
+
 ### Funcionalidades ###
   > - Como chegar?
   > - Avaliação
   > - Denúncias
+  > - Calculadora de preço real
  
 ### 1. Login ###
 
@@ -30,10 +35,6 @@ O nosso sistema conta também com um banco de denúncias que são exibidas no si
 
 ### 5. Calculadora de preço real ###
 
-### 6. Site ###
-
-Link para o site : http://monitoraai.tk/
-
-### 7. Esclarecimentos ###
+### 6. Esclarecimentos ###
 
 A funcionalidade de Previsão dos Ônibus em Tempo Real, prevista na ideia inicial, não foi possível devido a impossibilidade de adquirirmos essas informações. Visto que o órgão responsável se mostrou extremamente fechado a qualquer apoio ou transparência. 
