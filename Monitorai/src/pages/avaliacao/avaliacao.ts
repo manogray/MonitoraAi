@@ -42,6 +42,18 @@ export class AvaliacaoPage {
     });
     loading.present();
 
+    if(this.Avaliacao.Empresa == null){
+      loading.dismiss();
+      this.mostrarToast("Por favor selecione uma empresa");
+      return;
+    }
+
+    if(this.Avaliacao.Linha == null){
+      loading.dismiss();
+      this.mostrarToast("Por favor digite uma linha de ônibus");
+      return;
+    }
+
     this.Avaliacao.NomeUsuario = this.UserData.displayName;
     this.Avaliacao.EmailUsuario = this.UserData.email;
     let DataCompleta = new Date;
@@ -49,7 +61,7 @@ export class AvaliacaoPage {
     this.Avaliacao.Data = DataCompleta.getFullYear().toString()+"/"+MesCerto.toString()+"/"+DataCompleta.getDate().toString()+" "+DataCompleta.getHours().toString()+":"+DataCompleta.getMinutes().toString()+":"+DataCompleta.getSeconds().toString();
     this.Avaliacao.Linha = this.Avaliacao.Linha.toString();
     this.Avaliacao.Satisfacao = this.Avaliacao.Satisfacao.toString();
-    if(this.Avaliacao.Descricao == ""){
+    if(this.Avaliacao.Descricao == null){
       this.Avaliacao.Descricao = "Nada a declarar";
     }
     let listaInutil:any[] = this.Avaliacao;

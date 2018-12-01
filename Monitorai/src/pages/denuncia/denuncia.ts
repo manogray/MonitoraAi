@@ -42,6 +42,24 @@ export class DenunciaPage {
     });
     loading.present();
 
+    if(this.Denuncia.Empresa == null){
+      loading.dismiss();
+      this.mostrarToast("Por favor selecione uma empresa");
+      return;
+    }
+
+    if(this.Denuncia.Categoria == null){
+      loading.dismiss();
+      this.mostrarToast("Por favor selecione uma categoria");
+      return;
+    }
+
+    if(this.Denuncia.Linha == null){
+      loading.dismiss();
+      this.mostrarToast("Por favor digite uma linha de ônibus");
+      return;
+    }
+
     this.Denuncia.NomeUsuario = this.UserData.displayName;
     this.Denuncia.EmailUsuario = this.UserData.email;
     this.Denuncia.Crime = "0";
@@ -50,7 +68,7 @@ export class DenunciaPage {
     this.Denuncia.Data = DataCompleta.getFullYear().toString()+"/"+MesCerto.toString()+"/"+DataCompleta.getDate().toString()+" "+DataCompleta.getHours().toString()+":"+DataCompleta.getMinutes().toString()+":"+DataCompleta.getSeconds().toString();
     this.Denuncia.Linha = this.Denuncia.Linha.toString();
     this.Denuncia.CPFUsuario = this.Denuncia.CPFUsuario.toString();
-    if(this.Denuncia.Descricao == ""){
+    if(this.Denuncia.Descricao == null){
       this.Denuncia.Descricao = "Nada a declarar";
     }
     let listaInutil:any[] = this.Denuncia;
